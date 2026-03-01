@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seu Feijão</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <button class="menu-btn" id="menuBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <img src="images/logo.png" alt="Seu Feijão" class="logo">
+</header>
+
+<section class="especialidades" id="especialidades">
+
+  <h2 class="section-title">Especialidades</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="images/prato1.png" alt="Moqueca do Chef">
+      <div class="card-content">
+        <h3>Moqueca do Chef</h3>
+        <p class="price">R$ 89,90</p>
+        <button class="btn">Saiba mais</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/prato1.png" alt="Feijoada Premium">
+      <div class="card-content">
+        <h3>Feijoada Premium</h3>
+        <p class="price">R$ 79,90</p>
+        <button class="btn">Saiba mais</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/prato1.png" alt="Picanha na Brasa">
+      <div class="card-content">
+        <h3>Picanha na Brasa</h3>
+        <p class="price">R$ 109,90</p>
+        <button class="btn">Saiba mais</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/prato1.png" alt="Camarão Especial">
+      <div class="card-content">
+        <h3>Camarão Especial</h3>
+        <p class="price">R$ 119,90</p>
+        <button class="btn">Saiba mais</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<nav class="side-menu" id="sideMenu">
+  <ul>
+    <li><a href="#especialidades">Especialidades</a></li>
+    <li><a href="#entradas">Entradas</a></li>
+    <li><a href="#pratos">Pratos</a></li>
+    <li><a href="#drinks">Drinks</a></li>
+    <li><a href="#sobremesas">Sobremesas</a></li>
+  </ul>
+</nav>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+
+    <button class="close-btn" id="closeModal">&times;</button>
+
+    <img src="images/prato1.png" alt="Moqueca do Chef" class="modal-img">
+
+    <div class="modal-body">
+
+      <h2>Moqueca do Chef</h2>
+      <p class="modal-price">R$ 89,90</p>
+
+      <div class="divider"></div>
+
+      <h3>Descrição</h3>
+      <p>
+        Moqueca tradicional com peixe fresco, leite de coco e temperos regionais.
+      </p>
+
+      <h3>Description</h3>
+      <p>
+        Traditional Brazilian fish stew with coconut milk and regional spices.
+      </p>
+
+      <h3>Ingredientes</h3>
+      <p>
+        Peixe, leite de coco, pimentões, cebola, coentro.
+      </p>
+
+      <h3>Ingredients</h3>
+      <p>
+        Fish, coconut milk, bell peppers, onion, coriander.
+      </p>
+
+      <div class="allergy-box">
+        <strong>Atenção / Allergy Notice</strong>
+        <p>
+          Contém peixe e pode conter traços de crustáceos.
+          <br>
+          Contains fish and may contain traces of shellfish.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

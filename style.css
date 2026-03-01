@@ -1,0 +1,335 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1F3920; /* fundo verde escuro da logo */
+  color: #F4F1EA; /* texto claro para contraste */
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  background: #1B3418;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* LOGO */
+
+.logo {
+  height: 80px;
+  object-fit: contain;
+}
+
+/* MENU BUTTON */
+
+.menu-btn {
+  position: absolute;
+  left: 20px;
+  width: 30px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6px;
+}
+
+.menu-btn span {
+  height: 2px;
+  width: 100%;
+  background: #FFFFFF;
+  transition: 0.3s ease;
+}
+
+/* SIDE MENU */
+
+.side-menu {
+  position: fixed;
+  top: 75px;
+  left: -100%;
+  width: 80%;
+  height: calc(100vh - 75px);
+
+  background: rgba(31, 57, 32, 0.22);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  padding-top: 40px;
+  transition: left 0.4s ease;
+  z-index: 1100;
+
+  background: linear-gradient(
+  to bottom,
+  rgba(31, 57, 32, 0.80),
+  rgba(31, 57, 32, 0.65)
+);
+}
+
+.side-menu ul {
+  list-style: none;
+  padding-left: 40px;
+}
+
+.side-menu li {
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 10px;
+}
+
+.side-menu a {
+  color: #FFFFFF;
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* OVERLAY */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 1050;
+}
+
+/* ACTIVE STATES */
+
+.side-menu.active {
+  left: 0;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+  .overlay {
+  background: rgba(0,0,0,0.2);
+}
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ANIMAÇÃO DO BOTÃO */
+
+.menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* SEÇÃO */
+
+.especialidades {
+  padding: 110px 20px 40px; /* espaço por causa do header fixo */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+  color: #1F3920;
+  font-weight: 600;
+}
+
+/* GRID */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+/* CARD */
+
+.card {
+  background: linear-gradient(145deg, #244A27, #1F3920);
+  border-radius: 22px;
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.35),
+    0 5px 15px rgba(0, 0, 0, 0.25);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.price {
+  color: #F4F1EA;
+  font-size: 14px;
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+/* BOTÃO */
+
+.btn {
+  width: 100%;
+  padding: 8px;
+  background: transparent;
+  border: 1px solid #F4F1EA;
+  color: #F4F1EA;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* EFEITO 3D LEVE */
+
+.card:active {
+  transform: scale(0.97);
+}
+
+/* MODAL BASE */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal.active {
+  display: flex;
+}
+
+/* CONTEÚDO */
+
+.modal-content {
+  background: #1F3920;
+  width: 100%;
+  max-height: 90vh;
+  border-radius: 22px;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* CORPO */
+
+.modal-body {
+  padding: 20px;
+  color: #F4F1EA;
+}
+
+.modal-body h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.modal-price {
+  font-size: 16px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.modal-body h3 {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #CFE8CF;
+  letter-spacing: 1px;
+}
+
+.modal-body p {
+  font-size: 14px;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
+/* DIVISOR */
+
+.divider {
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+  margin: 10px 0 15px;
+}
+
+/* ALERTA ALERGIA */
+
+.allergy-box {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.3);
+  font-size: 13px;
+}
+
+/* BOTÃO FECHAR */
+
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* ANIMAÇÃO */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
